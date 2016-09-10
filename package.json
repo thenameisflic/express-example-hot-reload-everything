@@ -1,0 +1,29 @@
+{
+  "name": "express-example-hot-reload-everything",
+  "version": "0.1.0",
+  "description": "An example of how to setup hot reload with Express, Livereload and Webpack.",
+  "main": "server/index.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "pug": "^0.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^2.2.0",
+    "connect-livereload": "^0.5.4",
+    "css-loader": "^0.25.0",
+    "express-livereload": "0.0.24",
+    "live-reload": "^1.1.0",
+    "nodemon": "^1.10.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.7.0",
+    "webpack-hot-middleware": "^2.12.2"
+  },
+  "scripts": {
+    "start": "concurrently --kill-others 'npm run server-watch' 'npm run live-reload'",
+    "server-watch": "./node_modules/nodemon/bin/nodemon.js server/",
+    "live-reload": "live-reload --port 9091 server/"
+  },
+  "author": "",
+  "license": "MIT"
+}
